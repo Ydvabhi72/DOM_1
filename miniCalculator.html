@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .calbox {
+        width: 400px;
+        height: 150px;
+        border: 2px solid black;
+        overflow: hidden;
+      }
+      .outputarea {
+        width: 100%;
+        height: 40px;
+        border: 2px solid black;
+        line-height: 40px;
+      }
+
+      #out {
+        font-size: 24px;
+        text-align: center;
+      }
+      .inputarea {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 190px);
+        justify-content: center;
+      }
+      .inputarea input {
+        text-align: center;
+      }
+      .btns {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: repeat(4, 80px);
+        justify-content: center;
+        gap: 5px;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="calbox">
+      <div class="outputarea">
+        <p id="out"></p>
+      </div>
+      <div class="inputarea">
+        <input
+          id="ele1"
+          type="number"
+          placeholder="enter 1st number"
+          value=""
+        />
+        <input
+          id="ele2"
+          type="number"
+          placeholder="enter 2nd number"
+          value=""
+        />
+      </div>
+      <div class="btns">
+        <button onclick="add()">Add</button>
+        <button onclick="subtract()">Subtract</button>
+        <button onclick="multiply()">Multiply</button>
+        <button onclick="divide()">Divide</button>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function add() {
+    var a = parseInt(document.querySelector("#ele1").value);
+    var b = parseInt(document.querySelector("#ele2").value);
+    var sum = a + b;
+    document.querySelector("#out").innerHTML = sum;
+    alert("addition of " + a + " and " + b + " is " + sum);
+  }
+  function subtract() {
+    var a = parseInt(document.querySelector("#ele1").value);
+    var b = parseInt(document.querySelector("#ele2").value);
+    var diff = a - b;
+    document.querySelector("#out").innerHTML = diff;
+    alert("subtraction of " + a + " and " + b + " is " + diff);
+  }
+  function multiply() {
+    var a = parseInt(document.querySelector("#ele1").value);
+    var b = parseInt(document.querySelector("#ele2").value);
+    var mul = a * b;
+    document.querySelector("#out").innerHTML = mul;
+    alert("multiplication of " + a + " and " + b + " is " + mul);
+  }
+  function divide() {
+    var a = parseInt(document.querySelector("#ele1").value);
+    var b = parseInt(document.querySelector("#ele2").value);
+    var div = a / b;
+    // div = div.toFixed(2);
+    document.querySelector("#out").innerHTML = div;
+    alert("division of " + a + " and " + b + " is " + div);
+  }
+</script>
